@@ -4,15 +4,12 @@
         "commonjs": true,
         "es2021": true
     },
-    "extends": "eslint",
+    "extends": [
+        "google"
+    ],
     "parserOptions": {
-        
         "ecmaVersion": 12
     },
-    "overrides": [{
-        "files":["./validate.js"]
-    }],
     "rules": {
-        "semi" :[ "error", "always"]
     }
 }

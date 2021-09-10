@@ -1,7 +1,9 @@
-'use strict';
-const express = require("express");
+const express = require('express');
+
 const PORT = 5555;
-const { GraphQLObjectType, GraphQLInt, GraphQLString, GraphQLFloat, GraphQLNonNull, GraphQLSchema, GraphQLList } = require("graphql");
+const {
+  GraphQLObjectType,
+  GraphQLInt, GraphQLString, GraphQLFloat, GraphQLNonNull, GraphQLSchema, GraphQLList } = require("graphql");
 const { graphqlHTTP } = require("express-graphql");
 const fs = require("fs");
 let { jwt_secret, password_secret } = JSON.parse( fs.readFileSync("./keys/keys.json").toString("utf-8") );
