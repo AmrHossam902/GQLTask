@@ -1,11 +1,17 @@
 
-const {GraphQLObjectType, GraphQLNonNull, GraphQLString, GraphQLFloat} = require('graphql');
+const {
+  GraphQLObjectType,
+  GraphQLNonNull,
+  GraphQLString,
+  GraphQLFloat,
+} = require('graphql');
 const {throwError} = require('../error');
-const { validateEmail, validateName, validatePassword} = require('../validate');
+const {validateEmail, validateName, validatePassword} = require('../validate');
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
-const { passwordSecret} = JSON.parse(fs.readFileSync( path.resolve(__dirname + '/../keys/keys.json')).toString('utf-8'));
+const {passwordSecret} =JSON.parse(fs.readFileSync(
+    path.resolve(__dirname + '/../keys/keys.json')).toString('utf-8'));
 
 /**
  * this function creates a Mutation object
@@ -14,7 +20,9 @@ const { passwordSecret} = JSON.parse(fs.readFileSync( path.resolve(__dirname + '
  * 2- create new products
  * @param {object} users the database interfacing object for users type
  * @param {object} products the database interfacing object for prodcuts type
- * @returns {object} Mutation object
+ * @param {object} userType object defining a type for user in schema
+ * @param {object} productType object defining a type for product in schema
+ * @return {object} Mutation object
  */
 function Mutation(users, products, userType, productType) {
   return new GraphQLObjectType({

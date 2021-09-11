@@ -1,18 +1,30 @@
 
-const {GraphQLObjectType, GraphQLList, GraphQLNonNull, GraphQLString} = require('graphql');
+const {
+  GraphQLObjectType,
+  GraphQLList,
+  GraphQLNonNull,
+  GraphQLString,
+} = require('graphql');
 const {throwError} = require('../error');
 const crypto = require('crypto');
 
 const fs = require('fs');
 const path = require('path');
-const { passwordSecret, jwtSecret} = JSON.parse(fs.readFileSync( path.resolve(__dirname + '/../keys/keys.json')).toString('utf-8'));
-const jwt = require("jsonwebtoken");
+const {passwordSecret, jwtSecret} =JSON.parse(fs.readFileSync(
+    path.resolve(__dirname + '/../keys/keys.json')).toString('utf-8'));
+const jwt = require('jsonwebtoken');
 
 /**
  * return query object
+ * with the following capabilities
+ * 1- login
+ * 2- get all products for a specific user
+ * 3- get all products for all users
  * @param {object} users the database interfacing object for users type
  * @param {object} products the database interfacing object for prodcuts type
- * @returns {object} Query object
+ * @param {object} userType object defining a type for user in schema
+ * @param {object} productType object defining a type for product in schema
+ * @return {object} Query object
  */
 function Query(users, products, userType, productType) {
   return new GraphQLObjectType({
@@ -78,7 +90,7 @@ function Query(users, products, userType, productType) {
             throwError(results.type, results.msg);
           }
 
-          return results;                    
+          return results;
         },
       },
     },

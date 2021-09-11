@@ -15,7 +15,7 @@ function UsersModel(dbInterface) {
  * @param {string} name name of the user
  * @param {string} email email of the user
  * @param {string} password password of the user
- * @returns {Promise<{insertId:number}>| Promise<{type:string, msg:string}>}
+ * @return {Promise<{insertId:number}>| Promise<{type:string, msg:string}>}
  * returns {insertId} incase of success,
  * returns {type, msg} in case of failure
  */
@@ -31,7 +31,7 @@ UsersModel.prototype.addNewUser = function(name, email, password) {
 /**
  * search for a user in database using his/her email
  * @param {string} email email to search for
- * @returns {Promise<undefined>|
+ * @return {Promise<undefined>|
  *         Promise<{id:number, name:string, email:string, password:string}>|
  *         Promise<{type:string, msg:string}>}
  * undefined : if nothing is found,
@@ -53,7 +53,7 @@ UsersModel.prototype.getUserByEmail = function(email) {
 /**
  * search for a user in database using his/her id
  * @param {number} id id of the user to search for
- * @returns {Promise<undefined>|
+ * @return {Promise<undefined>|
  *         Promise<{id:number, name:string, email:string, password:string}>|
  *         Promise<{type:string, msg:string}>}
  * undefined : if nothing is found,
