@@ -102,6 +102,7 @@ function Mutation(users, products, userType, productType) {
             id: result.insertId,
             name: args.name,
             price: args.price,
+            userId: context.userId,
           };
         },
       },

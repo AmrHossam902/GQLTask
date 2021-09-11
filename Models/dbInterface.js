@@ -21,7 +21,7 @@ function MysqlInterface() {}
  */
 MysqlInterface.getPool = function() {
   if (MysqlInterface.pool) {
-    return MysqlInterface.pool.getConnection;
+    return MysqlInterface.pool;
   }
   MysqlInterface.pool = mysql.createPool({
     connectionLimit: 5,

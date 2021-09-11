@@ -1,6 +1,12 @@
 
 const {GraphQLObjectType, GraphQLList, GraphQLNonNull, GraphQLString} = require('graphql');
 const {throwError} = require('../error');
+const crypto = require('crypto');
+
+const fs = require('fs');
+const path = require('path');
+const { passwordSecret, jwtSecret} = JSON.parse(fs.readFileSync( path.resolve(__dirname + '/../keys/keys.json')).toString('utf-8'));
+const jwt = require("jsonwebtoken");
 
 /**
  * return query object
@@ -23,7 +29,7 @@ function Query(users, products, userType, productType) {
           const password = args.password;
 
           const cryptoPassword = crypto.createHmac('sha256',
-              password_secret).update(password).digest('hex');
+              passwordSecret).update(password).digest('hex');
           const result = await users.getUserByEmail(email);
 
           if (! result ||
@@ -36,7 +42,7 @@ function Query(users, products, userType, productType) {
           }
 
           const token = jwt.sign({id: result.id},
-              jwt_secret, {expiresIn: '1h'});
+              jwtSecret, {expiresIn: '1h'});
           context.res.cookie('token', token, {'httpOnly': true});
           context.id = result.id;
           return result;
