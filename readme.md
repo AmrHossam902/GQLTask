@@ -39,7 +39,29 @@
 | int| string |double| int|
 
 
+### Mutations
 
-### GraphQL Defined Mutations
+all mutations are available through ***graphiql*** interface docs
 
-### graphQL Defined Queries
+1. register(name, email, password, confirmPassword)
+    - adds new user in the DB.
+
+2. addProduct(name, price)
+    - adds a new product to db only of user is logged in.
+
+
+### Queries
+
+1. login(email, password)
+    - allow user to send login request.
+    - sets an ***idedntification*** token if user credentials are correct
+    
+    
+    
+2. getUserProducts
+    - fetches all products specific for the user who onws the session
+    - works only if user is logged in
+
+3. getAllProducts
+    - get all products of all users
+    - works only if user is logged in
