@@ -1,6 +1,6 @@
 {
-    "dbUser" : "newuser",
+    "dbUser" : "root",
     "dbPassword" : "rootROOT@12",
     "dbName" : "store",
-    "host" : "localhost"
+    "host" : "mysql_service"
 }
