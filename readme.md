@@ -24,3 +24,22 @@
 ### Run Containers again, after stopping them
 - go in terminal inside compose folder and run
 ```docker-compose up```
+
+### DbSchema
+#### user
+
+| id | name | email | password |
+|--- | -----| ---   | ---      |
+| int| string |string| string|
+
+
+#### product
+| id | name | price | userId |
+|--- | -----| ---   | ---    |
+| int| string |double| int|
+
+
+
+### GraphQL Defined Mutations
+
+### graphQL Defined Queries
