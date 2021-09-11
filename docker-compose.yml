@@ -2,7 +2,7 @@ version: '3'
 
 services:
   graph_app:
-    build: '.'
+    build: ../GraphApp
     ports:
       - 5555:5555
     depends_on:
