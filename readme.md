@@ -41,7 +41,7 @@
 
 ### Mutations
 
-all mutations are available through ***graphiql*** interface docs
+all mutations are available through ***graphiql*** interface docs at ```https:localhost:5555/graphql```
 
 1. register(name, email, password, confirmPassword)
     - adds new user in the DB.
@@ -51,6 +51,7 @@ all mutations are available through ***graphiql*** interface docs
 
 
 ### Queries
+all queries are available through ***graphiql*** interface docs at ```https:localhost:5555/graphql```
 
 1. login(email, password)
     - allow user to send login request.
