@@ -54,5 +54,9 @@ app.use('/graphql', graphqlHTTP(
     }),
 ));
 
+require('https').createServer({
+  key: fs.readFileSync('./keys/localhost.key'),
+  cert: fs.readFileSync('./keys/localhost.cert')
+}, app).listen(PORT);
 
-app.listen(PORT);
+

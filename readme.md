@@ -11,8 +11,11 @@
     ```mkdir Run;```<br>
 - go inside that folder and clone the compose branch using these command:<br>
     ```cd Run;```<br>
-    ```git clone --branch compose https://github.com/AmrHossam902/GQLTask.git compose```
+    ```git clone --branch compose https://github.com/AmrHossam902/GQLTask.git compose;```
     - now you have compose directory inside Run containing compose branch
 - go inside compose and run **run.sh** script<br>
 ```cd compose;```<br>
 ```bash run.sh;```
+
+- now the containers are running, you can access the project at<br>
+```http:localhost:5555/graphql```
