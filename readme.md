@@ -6,7 +6,7 @@
 3. compose: contains files needed to build and run the whole App.
 
 
-### Instructions
+### Instructions to run for the first time
 - open terminal and create a folder anywhere using this command<br>
     ```mkdir Run;```<br>
 - go inside that folder and clone the compose branch using these command:<br>
@@ -18,4 +18,9 @@
 ```bash run.sh;```
 
 - now the containers are running, you can access the project at<br>
-```http:localhost:5555/graphql```
+```https:localhost:5555/graphql```
+
+
+### Run Containers again, after stopping them
+- go in terminal inside compose folder and run
+```docker-compose up```
