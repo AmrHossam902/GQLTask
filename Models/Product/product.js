@@ -15,7 +15,7 @@ function ProductsModel(dbInterface) {
  * @param {string} name name of the product
  * @param {number} price email of the product
  * @param {number} userId Id of the user who owns the product
- * @return {Promise<{insertId:number}>| Promise<{type:string, msg:string}>}
+ * @returns {Promise<{insertId:number}>| Promise<{type:string, msg:string}>}
  * returns {insertId} incase of success,
  * returns {type, msg} in case of failure
  */
@@ -29,7 +29,7 @@ ProductsModel.prototype.addNewProduct = function(name, price, userId) {
 /**
  * get all products of a specific user
  * @param {number} userId id of the user to search for his/ her products
- * @return {Promise<Array<{id: number, name:string
+ * @returns {Promise<Array<{id: number, name:string
  *             , price:number, iserId:number}>>|
  *         Promise<{type:string, msg:string}>}
  * returns an array of products filled or empty in case user has no products,
@@ -46,7 +46,7 @@ ProductsModel.prototype.getProducts = function(userId) {
 
 /**
  * get all products of all users
- * @return {Promise<Array<{id: number, name:string
+ * @returns {Promise<Array<{id: number, name:string
  *             , price:number, iserId:number}>>|
  *         Promise<{type:string, msg:string}>}
  * returns an array of products filled or empty in case user has no products,
@@ -59,4 +59,6 @@ ProductsModel.prototype.getAllProducts = function() {
         return result;
       });
 };
+
+module.exports.ProductsModel = ProductsModel;
 
