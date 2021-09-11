@@ -18,7 +18,7 @@
 ```bash run.sh;```
 
 - now the containers are running, you can access the project at<br>
-```https:localhost:5555/graphql```
+```https://localhost:5555/graphql```
 
 
 ### Run Containers again, after stopping them
@@ -41,7 +41,7 @@
 
 ### Mutations
 
-all mutations are available through ***graphiql*** interface docs at ```https:localhost:5555/graphql```
+all mutations are available through ***graphiql*** interface docs at ```https://localhost:5555/graphql```
 
 1. register(name, email, password, confirmPassword)
     - adds new user in the DB.
@@ -51,7 +51,7 @@ all mutations are available through ***graphiql*** interface docs at ```https:lo
 
 
 ### Queries
-all queries are available through ***graphiql*** interface docs at ```https:localhost:5555/graphql```
+all queries are available through ***graphiql*** interface docs at ```https://localhost:5555/graphql```
 
 1. login(email, password)
     - allow user to send login request.
