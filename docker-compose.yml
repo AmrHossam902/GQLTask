@@ -2,15 +2,15 @@ version: '3'
 
 services:
   graph_app:
-    build: ../GraphApp
+    build: ./GraphApp
     ports:
       - 5555:5555
     depends_on:
       - mysql_service
   
   mysql_service:
-    build: ../Mysql
+    build: ./Mysql
     environment:
       MYSQL_ROOT_PASSWORD: rootROOT@12
     volumes:
-      - ../Mysql/data:/var/lib/mysql
+      - ./Mysql/data:/var/lib/mysql
